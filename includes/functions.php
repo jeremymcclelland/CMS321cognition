@@ -38,7 +38,7 @@ function navigation($subject_id, $page_id) {
                 $output .= " class = \"selected\"";
             }
             $output .= ">";
-            $output .= "<a href=\"manage_content.php?subject=\"";
+            $output .= "<a href=\"manage_content.php?subject=";
             $output .= urlencode($subject["id"]);
             $output .= "\">";
             $output .= $subject["menu_name"];
@@ -52,7 +52,7 @@ function navigation($subject_id, $page_id) {
                     $output .= " class = \"selected\"";
                     }
                 $output .= ">";
-                $output .= "<a href=\"manage_content.php?page=\"";
+                $output .= "<a href=\"manage_content.php?page=";
                 $output .= urlencode($page["id"]);
                 $output .= "\">";
                 $output .= $page["menu_name"];
