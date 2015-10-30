@@ -5,13 +5,20 @@
 <?php
     if (isset($_GET["subject"])) {
         $selected_subject_id = $_GET["subject"];
+        $current_subject = find_subject_by_id($selected_subject_id);
         $selected_page_id = null;
+        $current_page = null;
     } elseif (isset($_GET["page"])) {
         $selected_page_id = $_GET["page"];
+        $current_page = find_page_by_id($selected_page_id);
         $selected_subject_id = null;
+        $current_subject = null;
+
     } else {
         $selected_page_id = null;
         $selected_subject_id = null;
+        $current_page = null;
+        $current_subject = null;
     }
 ?>
 <div id="main">
@@ -19,14 +26,12 @@
         <?php echo navigation($selected_subject_id, $selected_page_id); ?>
     </div>
     <div id="page">
-        <?php if ($selected_subject_id) { ?>
+        <?php if ($current_subject) { ?>
             <h2>Manage Subject</h2>
-            <?php $current_subject = find_subject_by_id($selected_subject_id); ?>
-            Menue name: <?php echo $current_subject["menu_name"]; ?><br />
-        <?php } elseif ($selected_page_id) { ?>
+            Menu name: <?php echo $current_subject["menu_name"]; ?><br />
+        <?php } elseif ($current_page) { ?>
             <h2>Manage Page</h2>
-            <?php $current_page = find_page_by_id($selected_page_id); ?>
-            Menue name: <?php echo $current_page["menu_name"]; ?><br />
+            Menu name: <?php echo $current_page["menu_name"]; ?><br />
         <?php } else { ?>
             Please select a subject or page
         <?php } ?>    
