@@ -49,7 +49,8 @@
 			Visible: <?php echo $current_page["visible"] == 1 ? 'yes' : 'no'; ?><br />
 			Content:<br />
 			<div class="view-content">
-				<?php echo htmlentities($current_page["content"]); ?>
+                            <?php // removed so I can add links (still a bad idea) echo htmlentities($current_page["content"]); ?>
+				<?php echo $current_page["content"]; ?>
 			</div>
 			<br />
       <br />
