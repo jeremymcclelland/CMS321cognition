@@ -1,4 +1,4 @@
-            <div id="footer">Copyright 20xx, 321Cognition</div>
+            <div id="footer">Copyright <?php echo date("Y"); ?>, 321Cognition</div>
 	</body>
 </html>
 <?php
