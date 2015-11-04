@@ -65,7 +65,8 @@ if (isset($_POST['submit'])) {
 <?php if (!$current_subject) {
  redirect_to("manage_content.php");
 }
- ?>   
+ ?> 
+<?php $layout_context = "admin"; ?>
 <?php include("../includes/layouts/header.php"); ?>
 
 <div id="main">
